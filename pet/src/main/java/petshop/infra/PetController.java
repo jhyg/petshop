@@ -60,4 +60,24 @@ import javax.transaction.Transactional;
                 }
 
         
+
+
+        @RequestMapping(value = "/{id}/test",
+                method = RequestMethod.PUT,
+                produces = "application/json;charset=UTF-8")
+        public Pet test(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response)
+                throws Exception {
+                        System.out.println("##### /pet/test  called #####");
+                        Optional<Pet> optionalPet = petRepository.findById(id);
+                        
+                        optionalPet.orElseThrow(()-> new Exception("No Entity Found"));
+                        Pet pet = optionalPet.get();
+                        petCommand.test();
+                        
+
+                        return pet;
+                        
+                }
+
+        
  }

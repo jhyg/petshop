@@ -21,4 +21,6 @@ public class PetCommand{
         unRegistered.publishAfterCommit();
 
     }
+    public void test(){
+    }
 }

@@ -84,6 +84,14 @@
       >
         Unregister
       </v-btn>
+      <v-btn
+        color="deep-purple lighten-2"
+        text
+        @click="test"
+        v-if="!editMode"
+      >
+        Test
+      </v-btn>
     </v-card-actions>
   </v-card>
 
@@ -171,6 +179,16 @@
       async unregister(){
         try{
           var temp = await axios.put(axios.fixUrl(this.value._links['unregister'].href))
+          this.value = temp.data;
+          this.editMode = false;
+        }catch(e){
+          alert(e.message)
+        }
+      },
+      
+      async test(){
+        try{
+          var temp = await axios.put(axios.fixUrl(this.value._links['test'].href))
           this.value = temp.data;
           this.editMode = false;
         }catch(e){
