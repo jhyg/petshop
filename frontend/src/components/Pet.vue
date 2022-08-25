@@ -92,6 +92,30 @@
       >
         Test
       </v-btn>
+      <v-btn
+        color="deep-purple lighten-2"
+        text
+        @click="test2zzzz"
+        v-if="!editMode"
+      >
+        Test2zzzz
+      </v-btn>
+      <v-btn
+        color="deep-purple lighten-2"
+        text
+        @click="test333"
+        v-if="!editMode"
+      >
+        Test333
+      </v-btn>
+      <v-btn
+        color="deep-purple lighten-2"
+        text
+        @click="test444"
+        v-if="!editMode"
+      >
+        Test444
+      </v-btn>
     </v-card-actions>
   </v-card>
 
@@ -189,6 +213,36 @@
       async test(){
         try{
           var temp = await axios.put(axios.fixUrl(this.value._links['test'].href))
+          this.value = temp.data;
+          this.editMode = false;
+        }catch(e){
+          alert(e.message)
+        }
+      },
+      
+      async test2zzzz(){
+        try{
+          var temp = await axios.put(axios.fixUrl(this.value._links['test2zzzz'].href))
+          this.value = temp.data;
+          this.editMode = false;
+        }catch(e){
+          alert(e.message)
+        }
+      },
+      
+      async test333(){
+        try{
+          var temp = await axios.put(axios.fixUrl(this.value._links['test333'].href))
+          this.value = temp.data;
+          this.editMode = false;
+        }catch(e){
+          alert(e.message)
+        }
+      },
+      
+      async test444(){
+        try{
+          var temp = await axios.put(axios.fixUrl(this.value._links['test444'].href))
           this.value = temp.data;
           this.editMode = false;
         }catch(e){
