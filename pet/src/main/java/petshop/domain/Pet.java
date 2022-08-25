@@ -49,6 +49,7 @@ public class Pet  {
     }
     @PrePersist
     public void onPrePersist(){
+        // TEST ! !! ! ! !! !
         // Get request from Item
         //petshop.external.Item item =
         //    Application.applicationContext.getBean(petshop.external.ItemService.class)
