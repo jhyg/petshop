@@ -25,4 +25,6 @@ public class PetCommand{
     }
     public void test2zzzz(){
     }
+    public void test333(){
+    }
 }
