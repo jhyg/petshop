@@ -108,6 +108,14 @@
       >
         Test333
       </v-btn>
+      <v-btn
+        color="deep-purple lighten-2"
+        text
+        @click="test444"
+        v-if="!editMode"
+      >
+        Test444
+      </v-btn>
     </v-card-actions>
   </v-card>
 
@@ -225,6 +233,16 @@
       async test333(){
         try{
           var temp = await axios.put(axios.fixUrl(this.value._links['test333'].href))
+          this.value = temp.data;
+          this.editMode = false;
+        }catch(e){
+          alert(e.message)
+        }
+      },
+      
+      async test444(){
+        try{
+          var temp = await axios.put(axios.fixUrl(this.value._links['test444'].href))
           this.value = temp.data;
           this.editMode = false;
         }catch(e){
