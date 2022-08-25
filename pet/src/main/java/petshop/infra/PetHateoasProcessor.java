@@ -14,6 +14,7 @@ public class PetHateoasProcessor implements RepresentationModelProcessor<EntityM
         model.add(Link.of(model.getRequiredLink("self").getHref() + "/feed").withRel("feed"));
         model.add(Link.of(model.getRequiredLink("self").getHref() + "/unregister").withRel("unregister"));
         model.add(Link.of(model.getRequiredLink("self").getHref() + "/test").withRel("test"));
+        model.add(Link.of(model.getRequiredLink("self").getHref() + "/test2zzzz").withRel("test2zzzz"));
         
         return model;
     }
