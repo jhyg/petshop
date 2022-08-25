@@ -17,6 +17,7 @@ public class PetCommand{
         UnRegistered unRegistered = new UnRegistered();
         /*
         Input Event Content
+        // tesT ! ! 1
         */
         unRegistered.publishAfterCommit();
 
